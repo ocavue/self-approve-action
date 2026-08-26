@@ -1,23 +1,27 @@
-name: The name of your action here
-description: Provide a description here
-author: Your name or organization here
+name: Self Approve
+description:
+  Approve a pull request as github-actions[bot] when it is not a draft and its
+  author is listed in the repository's CODEOWNERS file
+author: ocavue
 
-# Add your action's branding here. This will appear on the GitHub Marketplace.
 branding:
-  icon: heart
-  color: red
+  icon: check-circle
+  color: green
 
-# Define your inputs here.
 inputs:
-  milliseconds:
-    description: Your input description here
-    required: true
-    default: '1000'
+  github-token:
+    description:
+      Token used to create the approving review. Defaults to the workflow token,
+      so the review is authored by github-actions[bot].
+    required: false
+    default: ${{ github.token }}
 
-# Define your outputs here.
 outputs:
-  time:
-    description: Your output description here
+  approved:
+    description: '"true" when this run created an approving review'
+  reason:
+    description:
+      Why the pull request was not approved, when `approved` is "false"
 
 runs:
   using: node24
