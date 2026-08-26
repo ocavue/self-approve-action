@@ -1,5 +1,6 @@
 import type { getOctokit } from '@actions/github'
 import { describe, expect, it } from 'vitest'
+
 import { fetchCodeowners, parseCodeownersUsers } from '../src/codeowners.js'
 
 type Octokit = ReturnType<typeof getOctokit>
