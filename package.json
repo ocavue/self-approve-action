@@ -18,10 +18,10 @@
     "actions"
   ],
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.mjs"
   },
   "scripts": {
-    "bundle": "npm run format:write && npm run package",
+    "build": "tsdown",
     "ci-test": "npx vitest run",
     "coverage": "npx make-coverage-badge --output-path ./badges/coverage.svg",
     "format:write": "npx prettier --write .",
@@ -34,11 +34,9 @@
     "all": "npm run format:write && npm run lint && npm run test && npm run coverage && npm run package"
   },
   "license": "MIT",
-  "dependencies": {
-    "@actions/core": "^3.0.0",
-    "@actions/github": "^9.1.1"
-  },
   "devDependencies": {
+    "@actions/core": "^3.0.0",
+    "@actions/github": "^9.1.1",
     "@eslint/compat": "^2.0.2",
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^10.0.1",
@@ -55,6 +53,7 @@
     "make-coverage-badge": "^1.2.0",
     "prettier": "^3.8.1",
     "rollup": "^4.57.1",
+    "tsdown": "^0.22.14",
     "typescript": "^5.9.3",
     "vitest": "^4.1.11"
   },
