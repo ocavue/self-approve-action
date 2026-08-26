@@ -9,7 +9,7 @@ importers:
   .:
     devDependencies:
       '@actions/core':
-        specifier: ^3.0.0
+        specifier: ^3.0.1
         version: 3.0.1
       '@actions/github':
         specifier: ^9.1.1
@@ -30,10 +30,10 @@ importers:
         specifier: ^4.1.11
         version: 4.1.11(vitest@4.1.11)
       eslint:
-        specifier: ^10.0.0
+        specifier: ^10.0.2
         version: 10.9.1(jiti@2.7.0)(supports-color@7.2.0)
       prettier:
-        specifier: ^3.8.1
+        specifier: ^3.9.6
         version: 3.9.6
       tsdown:
         specifier: ^0.22.14
