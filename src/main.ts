@@ -1,5 +1,6 @@
 import * as core from '@actions/core'
 import * as github from '@actions/github'
+
 import { fetchCodeowners, parseCodeownersUsers } from './codeowners.js'
 
 type Octokit = ReturnType<typeof github.getOctokit>
@@ -17,8 +18,7 @@ interface PullRequestPayload {
 export async function run(): Promise<void> {
   try {
     const pull = github.context.payload.pull_request as
-      | PullRequestPayload
-      | undefined
+      PullRequestPayload | undefined
     if (!pull) {
       skip('this event has no pull request, so there is nothing to approve')
       return

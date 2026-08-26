@@ -1,11 +1,12 @@
 {
   "name": "self-approve-action",
-  "description": "GitHub Action that approves a pull request when its author is a code owner",
-  "version": "1.0.0",
-  "packageManager": "pnpm@11.15.0",
-  "author": "ocavue",
   "type": "module",
+  "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@11.15.0",
+  "description": "GitHub Action that approves a pull request when its author is a code owner",
+  "author": "ocavue",
+  "license": "MIT",
   "homepage": "https://github.com/ocavue/self-approve-action",
   "repository": {
     "type": "git",
@@ -31,7 +32,6 @@
     "local-action": "@github/local-action . src/main.ts .env",
     "test": "vitest run --coverage"
   },
-  "license": "MIT",
   "devDependencies": {
     "@actions/core": "^3.0.0",
     "@actions/github": "^9.1.1",
