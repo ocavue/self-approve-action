@@ -1,5 +1,6 @@
 import type { getOctokit } from '@actions/github'
 import { describe, expect, it } from 'vitest'
+
 import { fetchCodeowners, parseCodeownersUsers } from '../src/codeowners.js'
 
 type Octokit = ReturnType<typeof getOctokit>
@@ -31,9 +32,12 @@ describe('fetchCodeowners', () => {
     return {
       rest: {
         repos: {
-          getContent: async ({ path }: { path: string }) => {
-            if (path in results) return { data: results[path] }
-            throw Object.assign(new Error('Not Found'), { status: 404 })
+          getContent: ({ path }: { path: string }) => {
+            const content = results[path]
+            if (content != null) return Promise.resolve({ data: content })
+            return Promise.reject(
+              Object.assign(new Error('Not Found'), { status: 404 })
+            )
           }
         }
       }
@@ -58,9 +62,10 @@ describe('fetchCodeowners', () => {
     const octokit = {
       rest: {
         repos: {
-          getContent: async () => {
-            throw Object.assign(new Error('Server Error'), { status: 500 })
-          }
+          getContent: () =>
+            Promise.reject(
+              Object.assign(new Error('Server Error'), { status: 500 })
+            )
         }
       }
     } as unknown as Octokit

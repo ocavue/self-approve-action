@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+
 import * as core from '../__fixtures__/core.js'
 import * as github from '../__fixtures__/github.js'
 import { run } from '../src/main.js'
