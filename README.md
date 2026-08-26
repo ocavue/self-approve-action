@@ -1,7 +1,6 @@
 # Self Approve Action
 
 ![CI](https://github.com/ocavue/self-approve-action/actions/workflows/ci.yml/badge.svg)
-![Coverage](./badges/coverage.svg)
 
 Approve your own pull requests as `github-actions[bot]`.
 
