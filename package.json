@@ -25,7 +25,8 @@
     "lint": "pnpm run lint:eslint && pnpm run lint:prettier",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --check .",
-    "fix": "pnpm run build && pnpm run fix:prettier",
+    "fix": "pnpm run build && pnpm run fix:prettier && pnpm run fix:eslint",
+    "fix:eslint": "eslint --fix .",
     "fix:prettier": "prettier --write .",
     "local-action": "@github/local-action . src/main.ts .env",
     "test": "vitest run --coverage"
