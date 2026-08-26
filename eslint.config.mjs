@@ -2,4 +2,4 @@
 
 import { defineESLintConfig } from '@ocavue/eslint-config'
 
-export default defineESLintConfig({}, {ignores: ["**/dist"]})
+export default defineESLintConfig({}, { ignores: ['**/dist'] })
