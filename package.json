@@ -2,6 +2,7 @@
   "name": "self-approve-action",
   "description": "GitHub Action that approves a pull request when its author is a code owner",
   "version": "1.0.0",
+  "packageManager": "pnpm@11.15.0",
   "author": "ocavue",
   "type": "module",
   "private": true,
@@ -18,9 +19,6 @@
   ],
   "exports": {
     ".": "./dist/index.js"
-  },
-  "engines": {
-    "node": ">=24.0.0"
   },
   "scripts": {
     "bundle": "npm run format:write && npm run package",
