@@ -62,9 +62,11 @@ describe('fetchCodeowners', () => {
     const octokit = {
       rest: {
         repos: {
-          getContent: () => { return Promise.reject(
+          getContent: () => {
+            return Promise.reject(
               Object.assign(new Error('Server Error'), { status: 500 })
-            ) }
+            )
+          }
         }
       }
     } as unknown as Octokit
