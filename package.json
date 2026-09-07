@@ -37,13 +37,13 @@
     "@actions/core": "^3.0.1",
     "@actions/github": "^9.1.1",
     "@github/local-action": "^7.0.1",
-    "@ocavue/eslint-config": "^4.13.5",
+    "@ocavue/eslint-config": "^4.16.1",
     "@ocavue/tsconfig": "^0.7.1",
     "@types/node": "^24.0.0",
     "@vitest/coverage-v8": "^4.1.11",
-    "eslint": "^10.0.2",
+    "eslint": "^10.0.3",
     "prettier": "^3.9.6",
-    "tsdown": "^0.22.14",
+    "tsdown": "^0.23.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.11"
   }
